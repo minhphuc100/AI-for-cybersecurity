@@ -1,0 +1,52 @@
+How to use git via command line .
+
+To use Git via the command line, you must first install it and then use a series of terminal commands—such as 
+git init to start a repo, git add to stage changes, and git commit to save them—to manage your project versions.
+
+But with new git for window, we don't need to do direct command, we can commit change with it instead !
+
+However, it still very useful to know the command to do so.
+1. Setting Up & Startinggit init: 
+Initializes a new, empty Git repository in your current folder.
+
+git clone <url>: Downloads an existing repository and all its history to your computer.
+
+git config --global user.name "Name": Sets your name for all your projects
+
+2. Basic Workflow
+git add <file>: Stages a file for commit.
+
+git commit -m "message": Commits the staged changes with a message describing the update.
+
+git status: Shows the status of your working directory and staging area.
+
+git log: Displays the commit history for the repository.
+
+3. Branching and Merging
+
+git branch <branch-name>: Creates a new branch.
+
+git checkout <branch-name>: Switches to the specified branch.
+
+git merge <branch-name>: Merges the specified branch into the current branch.
+
+4. Remote Repositories
+
+git remote add origin <url>: Connects your local repository to a remote server.
+
+git push -u origin <branch-name>: Pushes your commits to the remote repository.
+
+git pull: Fetches and merges changes from the remote repository to your local branch.
+
+5. Additional Commands
+
+git diff: Shows the differences between your working directory and the last commit.
+
+git reset --hard HEAD: Resets your working directory to the last commit, discarding all changes.
+
+git stash: Temporarily saves changes that are not ready to be committed.
+
+git stash pop: Applies the stashed changes back to your working directory.
+
+These are just a few of the many commands available in Git. As you become more comfortable with Git, you can explore additional features and commands to further enhance your version control workflow.
+
