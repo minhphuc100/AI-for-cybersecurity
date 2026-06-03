@@ -29,3 +29,7 @@ We need an model can work almost like AI-powered siem system
 ---
 Need to parse data according to time-window, user, ... into a single big snapshot for ai to analyze
 
+Structure: 
+[ Raw Auth Logs ] ➔ [ Data Parser & Feature Engineer ] ➔ [ AI Model Detection ] ➔ [ Alert Dashboard ]
+
+
