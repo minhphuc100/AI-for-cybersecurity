@@ -202,7 +202,15 @@ for feat, var in feat_var.items():
 # ═════════════════════════════════════════════════════════════════════════════
 print_header("STEP 2: TRAIN / TEST SPLIT + SCALING")
 
-X = df_raw[feature_cols].values
+# Final safety pass: engineered features can introduce inf/NaN values after
+# the earlier cleaning step, and StandardScaler requires finite numeric input.
+features_df = df_raw[feature_cols].apply(pd.to_numeric, errors="coerce")
+invalid_before_scaling = (~np.isfinite(features_df.to_numpy())).sum()
+if invalid_before_scaling:
+    print(f"\n  Final cleanup before scaling: replaced {invalid_before_scaling:,} invalid feature values")
+features_df = features_df.replace([np.inf, -np.inf], np.nan).fillna(0)
+
+X = features_df.values
 y = df_raw["label_binary"].values
 
 X_train, X_test, y_train, y_test = train_test_split(
